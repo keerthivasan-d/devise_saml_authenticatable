@@ -72,7 +72,7 @@ module Devise
                         else Devise.saml_update_user
                         end
           if update_user || (resource.new_record? && create_user)
-            Devise.saml_update_resource_hook.call(resource, decorated_response, auth_value)
+            Devise.saml_update_resource_hook.call(resource, decorated_response, auth_value, relay_state)
           end
 
           resource
